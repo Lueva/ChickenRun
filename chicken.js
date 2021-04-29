@@ -57,21 +57,27 @@ exports.update = function (req, res) {
         if (err) {
             res.send(err);
         }
-        chicken.name = req.body.name;
-        chicken.birthday = req.body.birthday;
-        chicken.weight = req.body.weight;
-        chicken.steps = req.body.steps;
-        chicken.isRunning = req.body.isRunning;
-    // save the chicken and check for errors
-        chicken.save(function (err) {
-            if (err) {
-                res.json(err);
-            }
-            res.json({
-                message: 'Your chicken information has been updated.',
-                data: chicken
+        if (chicken) {
+            chicken.name = req.body.name;
+            chicken.birthday = req.body.birthday;
+            chicken.weight = req.body.weight;
+            chicken.steps = req.body.steps;
+            chicken.isRunning = req.body.isRunning;
+            // save the chicken and check for errors
+            chicken.save(function (err) {
+                if (err) {
+                    res.json(err);
+                }
+                res.json({
+                    message: 'Your chicken information has been updated.',
+                    data: chicken
+                });
             });
-        });
+        } else {
+            res.json({
+                message: 'Your chicken is not born yet!',
+            });
+        }
     });
 };
 
@@ -81,18 +87,24 @@ exports.run = function (req, res) {
         if (err) {
             res.send(err);
         }
-        chicken.steps = chicken.steps + 1;
-        chicken.isRunning = true;
-        // save the chicken and check for errors
-        chicken.save(function (err) {
-            if (err) {
-                res.json(err);
-            }
-            res.json({
-                message: 'Your chicken is running!',
-                data: chicken
+        if (chicken) {
+            chicken.steps = chicken.steps + 1;
+            chicken.isRunning = true;
+            // save the chicken and check for errors
+            chicken.save(function (err) {
+                if (err) {
+                    res.json(err);
+                }
+                res.json({
+                    message: 'Your chicken is running!',
+                    data: chicken
+                });
             });
-        });
+        } else {
+            res.json({
+                message: 'Your chicken is not born yet!',
+            });
+        }
     });
 };
 

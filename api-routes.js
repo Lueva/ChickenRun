@@ -15,6 +15,7 @@ router.route('/farmyard')
     .get(farmyard.index);
 router.route('/farmyard/:chicken_id')
     .post(farmyard.add);
+
 router.route('/chicken')
     .get(chicken.index)
     .post(chicken.new);

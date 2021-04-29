@@ -10,6 +10,7 @@
 
 ### Chicken life management
 - GET: Retrieve the list of all existing chickens : http://localhost:8080/api/chicken
+- GET: Retrieve one specific chicken : http://localhost:8080/api/chicken/{chickenId}
 - POST: Create a new chicken : http://localhost:8080/api/chicken
 
     exemple of payload: {

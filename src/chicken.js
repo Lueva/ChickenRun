@@ -1,5 +1,5 @@
 // Import chicken model
-Chicken = require('./chickenModel');
+Chicken = require('./models/chickenModel');
 mongoose = require('mongoose');
 
 // Get all chickens

@@ -1,6 +1,6 @@
 // Import farmyard model
-Farmyard = require('./farmyardModel');
-Chicken = require('./chickenModel');
+Farmyard = require('./models/farmyardModel');
+Chicken = require('./models/chickenModel');
 mongoose = require('mongoose');
 
 // Get all chickens in the farmyard

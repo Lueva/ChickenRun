@@ -1,4 +1,4 @@
-### Stack Technique 
+### Technical Stack 
 - NodeJS
 - MongoDB
 - ExpressJS: to run the server & make the endpoints accessible.
@@ -21,7 +21,7 @@
 
 - DELETE: Delete an existing chicken : http://localhost:8080/api/chicken/{chickenId}
 - PATCH: Make a chicken run : http://localhost:8080/api/chicken/{chickenId}/run
-- PUT: Update all information of a chicken : http://localhost:8080/api/chicken/{chickenId}
+- PUT: Update all information for a chicken : http://localhost:8080/api/chicken/{chickenId}
 
     exemple of payload: {
         "name": "Mochi",
